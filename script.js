@@ -64,3 +64,14 @@ function clearScreen(){
      document.getElementById("monster").value = "";
      document.getElementById("result").value = "";
 }
+String.prototype.removeCharAt =
+function (i){
+    var tmp = this.split("");
+    tmp.splice(i-1 , 1);
+    return tmp.join("");
+}
+function Clittle(){
+    var x = document.getElementById("monster").value;
+    x = x.removeCharAt(x.length - 1);
+    document.getElementById("monster").value = x;
+}
