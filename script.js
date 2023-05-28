@@ -75,3 +75,5 @@ function Clittle(){
     x = x.removeCharAt(x.length - 1);
     document.getElementById("monster").value = x;
 }
+
+
