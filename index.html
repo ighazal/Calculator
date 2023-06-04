@@ -8,8 +8,7 @@
 <body>
 <table class="calculator" >
   <tr>
-    <td colspan="3"> <input class="input-box" type="text" id="monster" disabled /> </td>
-      <td colspan="1"> <input class="pasokh-box" type="text" id="result" disabled /> </td>
+    <td colspan="4"> <input class="input-box" type="text" id="monster" disabled /> </td>
       <td> <input type="button" value="C little" onclick="Clittle()" id="btn" /> </td> 
   </tr>
   <tr>
@@ -25,6 +24,7 @@
     <td> <input type="button" value="5" onclick="display('5')" /> </td>
     <td> <input type="button" value="6" onclick="display('6')" /> </td>
     <td> <input class="change" type="button" value="-" onclick="amalgar('-')" /> </td>
+    <td> <input type="button" value="=" onclick="mosavi()" id="btn" /> </td>  
   </tr>
   <tr>
     <td> <input type="button" value="7" onclick="display('7')" /> </td>
@@ -35,7 +35,7 @@
   <tr>
     <td> <input type="button" value="." onclick="display('.')" /> </td>
     <td> <input type="button" value="0" onclick="display('0')" /> </td>
-    <td> <input type="button" value="=" onclick="mosavi()" id="btn" /> </td>
+    <td> <input class="change" type="button" value="√" onclick="amalgar('√')" /> </td>
     <td> <input class="change" type="button" value="*" onclick="amalgar('*')" /> </td>
   </tr>
 </table>

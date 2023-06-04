@@ -13,19 +13,7 @@
     color: black;
     border: solid black 0.5px;
     border-radius: 5px;
-    width: 210px;
-    height: 60px;
-    direction: ltr;
-    margin-left: 15px;
-    text-align: center;
-}
-.pasokh-box {
-    font-family: 'Orbitron', sans-serif;
-    background-color: #dcdbe1;
-    color: black;
-    border: solid black 0.5px;
-    border-radius: 5px;
-    width: 60px;
+    width: 290px;
     height: 60px;
     direction: ltr;
     margin-left: 15px;
@@ -37,6 +25,9 @@
 #ed {
     background-color: dodgerblue;
     font-size: 45px;   
+}
+input[type=text]{
+    font-size: 20px;
 }
 input[type=button] {
     font-family: 'Orbitron', sans-serif;

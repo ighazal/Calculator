@@ -1,68 +1,79 @@
-function mosavi(){
+var op_flag = true;
+var n = 0;
+var op = "";
 var x = document.getElementById("monster").value;
-var numbers = [];
-var amalgars = ["-","+","*","/"];
-var number = "";
-var operator = "";
-var result = 0;    
-    for (var i = 0; i < x.length; i++){
-        if (amalgars.includes(x[i]) == false){
-            number += x[i];
+function display(x){
+    document.getElementById("monster").value += x;
+    change_font();
+    op_flag = false;
+}
+function amalgar(x){
+    if (op_flag){
+        op = x;
+    }
+    else{
+    if(op === ""){ 
+       n += parseFloat(document.getElementById("monster").value);
+       document.getElementById("monster").value = "";
+       op = x;
+       op_flag = true;
+    }
+    else{
+        switch(op){
+            case "+":
+                n += parseFloat(document.getElementById("monster").value);  
+                break;
+            case "-":
+                n -= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "*":
+                n *= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "/":
+                n /= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "√":
+                n = Math.sqrt(parseFloat(document.getElementById("monster").value));
+                break;    
         }
-        else if (amalgars.includes(x[i])){
-            if (operator!==""){
-                switch(operator){
-                    case "+":
-                        result += parseInt(number); 
-                        break;
-                    case "-":
-                        result -= parseInt(number);
-                        break;
-                    case "*":
-                        result *= parseInt(number);
-                        break;
-                    case "/":
-                        result /= parseInt(number);
-                        break;            
-                } 
-                number = "";
-                operator = x[i];
-            }
-            else {
-                result = parseInt(number);
-                number = "";
-                operator = x[i];
-            }
-        }
-        if (i == x.length-1){
-            switch(operator){
-                case "+":
-                    result += parseInt(number); 
-                    break;
-                case "-":
-                    result -= parseInt(number);
-                    break;
-                case "*":
-                    result *= parseInt(number);
-                    break;
-                case "/":
-                    result /= parseInt(number);
-                    break;            
-            } 
-            number = "";
+        document.getElementById("monster").value = "";
+        op = x;
+        op_flag = true;
+    }
+    }
+}
+function mosavi(){
+      if(op === ""){ 
+       n += parseFloat(document.getElementById("monster").value);
+    }
+    else{
+        switch(op){
+            case "+":
+                n += parseFloat(document.getElementById("monster").value);  
+                break;
+            case "-":
+                n -= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "*":
+                n *= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "/":
+                n /= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "√":
+                n = Math.sqrt(parseFloat(document.getElementById("monster").value));
+                break;
         }
     }
-document.getElementById("result").value = result;
-}
-function display(value) {
-        document.getElementById("monster").value += value;
-}
-function amalgar(value) {
-        document.getElementById("monster").value += value;
+    document.getElementById("monster").value = n;
+    n = 0;
+    op = "";
+    op_flag = true;
 }
 function clearScreen(){
      document.getElementById("monster").value = "";
-     document.getElementById("result").value = "";
+     n = 0;
+     op = "";
 }
 String.prototype.removeCharAt =
 function (i){
@@ -72,8 +83,19 @@ function (i){
 }
 function Clittle(){
     var x = document.getElementById("monster").value;
-    x = x.removeCharAt(x.length - 1);
+    x = x.removeCharAt(x.length);
     document.getElementById("monster").value = x;
+    change_font();
 }
-
-
+function change_font(){
+   var monster_value = document.getElementById("monster").value;
+   if(monster_value.length>=8 && monster_value.length<=21){
+      document.getElementById("monster").style.fontSize = "17px";   
+   }
+   else if(monster_value.length>21){
+      document.getElementById("monster").style.fontSize = "15px";   
+   }
+   else{
+      document.getElementById("monster").style.fontSize = "20px";  
+    }
+}
