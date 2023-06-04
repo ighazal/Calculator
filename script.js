@@ -4,6 +4,7 @@ var n = 0;
 var op = "";
 var x = document.getElementById("monster").value;
 function display(x){
+    from_tavan_10();
     if(num_flag){
         document.getElementById("monster").value = "";
         num_flag = false;
@@ -119,4 +120,14 @@ function tavan_10(){
        let f = y+e;
        document.getElementById("monster").value = f;
    }
+}
+function from_tavan_10(){
+    var from_value = document.getElementById("monster").value;
+    if(from_value.includes("e")){
+        var w = from_value.split("e");
+        var a = parseFloat(w[0]);
+        var b = parseInt(w[1]);
+        var c = Math.ceil(a*(Math.pow(10,b)));
+        document.getElementById("monster").value = c;
+    }
 }
