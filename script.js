@@ -57,7 +57,7 @@ function amalgar(x){
 }
 function mosavi(){
       if(op === ""){ 
-       n += parseFloat(document.getElementById("monster").value);
+       n = parseFloat(document.getElementById("monster").value);
     }
     else{
         switch(op){
