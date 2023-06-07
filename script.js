@@ -3,6 +3,9 @@ var num_flag = false;
 var n = 0;
 var op = "";
 var x = document.getElementById("monster").value;
+window.onload = function() {
+  document.getElementById("monster").value = "";
+    }
 function display(x){
     from_tavan_10();
     if(num_flag){
