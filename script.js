@@ -24,7 +24,6 @@ function amalgar(x){
     else{
     if(op === ""){ 
        n += parseFloat(document.getElementById("monster").value);
-       document.getElementById("monster").value = "";
        op = x;
        num_flag = true;
        op_flag = true;
