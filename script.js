@@ -56,7 +56,7 @@ function amalgar(x){
     }
 }
 function mosavi(){
-      if(op === ""){ 
+    if(op === ""){ 
        n = parseFloat(document.getElementById("monster").value);
     }
     else{
@@ -101,6 +101,28 @@ function Clittle(){
     document.getElementById("monster").value = x;
     tavan_10(x);
     change_font();
+    if(op === ""){ 
+       n = parseFloat(document.getElementById("monster").value);
+    }
+    else{
+        switch(op){
+            case "+":
+                n += parseFloat(document.getElementById("monster").value);  
+                break;
+            case "-":
+                n -= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "*":
+                n *= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "/":
+                n /= parseFloat(document.getElementById("monster").value);   
+                break;
+            case "√":
+                n = Math.sqrt(parseFloat(document.getElementById("monster").value));
+                break;
+        }
+    }
 }
 function change_font(){
    var monster_value = document.getElementById("monster").value;
