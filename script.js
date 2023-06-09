@@ -116,7 +116,8 @@ function change_font(){
 }
 function tavan_10(){
    var power_value = document.getElementById("monster").value;
-   if(power_value.length>=10){
+   var divide_number = power_value.split(".");
+   if(divide_number[0].length>=10){
        x = parseFloat(power_value);
        let y = (x/Math.pow(10,(power_value.length-1))).toFixed(2);
        let e = "e"+(power_value.length-1);
